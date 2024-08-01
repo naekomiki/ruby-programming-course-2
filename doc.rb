@@ -2,8 +2,17 @@ class Document
     def initialize(text)
     @text = text
     end
+    def text
+        @text
+    end
 
     attr_reader :text
+end
+
+class Document
+    def initialize(text)
+    @text = text
+    end
 
     def words
         words.strip.split(/\s+/)
