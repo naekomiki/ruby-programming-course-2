@@ -8,17 +8,23 @@ class categories
     end
 end
 
+require_relative 'category'
 
-class categories
+class Categories
     def initialize
-        @category_list[category_name] || = Category.new
+        @category_list = {}
     end
+
+    def search(category_name)
+        @category_list[category_name] ||= Category.new
+    end
+
+    attr_reader :category_list
 
     def classify(text)
         :normal
     end
 end
-
 
 require_relative 'category'
 
