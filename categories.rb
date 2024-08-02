@@ -27,17 +27,29 @@ class Categories
 end
 
 require_relative 'category'
+require_relative 'categories_classifyable'
 
 class Categories
     def initialize
         @category_list = {}
     end
-
-attr_reader :category_list
+    attr_reader :category_list
 
     def search(category_name)
-        @category_list[category_name] ||=
-    Category.new(category_name)    
+        @category_list[category_name] ||=Category.new(category_name)    
+    end
+
+    include CategoriesClassifyable
+end
+
+class Categories
+    def initialize
+        @category_list = {}
+    end
+    attr_reader :category_list
+
+    def search(category_name)
+        @category_list[category_name] ||=Category.new(category_name)    
     end
 
     def classify(text)
