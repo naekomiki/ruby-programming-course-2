@@ -13,7 +13,9 @@ class Document
     def initialize(text)
     @text = text
     end
-
+    
+    attr_reader :text
+    
     def words
         words.strip.split(/\s+/)
     end
